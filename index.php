@@ -1,6 +1,23 @@
 <?php
 
  session_start();
+ 
+ $logged=0;
+ 
+ if(isset($_SESSION['user'])&&isset($_SESSION['pass']))
+    $logged=1;
+ 
+ if(isset($_POST['submitCF'])&&$logged==0)
+ {
+    $_SESSION['user'] = $_REQUEST['login'];
+    $_SESSION['pass'] = $_REQUEST['pass'];
+ }
+ 
+ if($logged==1)
+ {
+    header("Location: index2.php");
+    die();
+ }
 
 ?>
 
