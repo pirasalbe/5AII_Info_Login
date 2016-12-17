@@ -2,18 +2,18 @@
 
  session_start();
  
- $logged=0;
+ $_SESSION['pass']=0;
  
- if(isset($_SESSION['user'])&&isset($_SESSION['pass']))
-    $logged=1;
- 
- if(isset($_POST['submitCF'])&&$logged==0)
+ if(isset($_POST['log'])&&$_SESSION['pass']==0)
  {
     $_SESSION['user'] = $_REQUEST['login'];
     $_SESSION['pass'] = $_REQUEST['pass'];
  }
  
- if($logged==1)
+ if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
+    $_SESSION['pass']=1;
+ 
+ if($_SESSION['pass']==1)
  {
     header("Location: index2.php");
     die();
@@ -45,7 +45,7 @@
                                 <input type="text" class="form-control" name="login">
                                 <label for="pass">Password:</label>
                                 <input type="password" class="form-control" name="pass">
-                                <input class="btn btn-default" align="center" type="submit" name="submitCF" value="Login">
+                                <input class="btn btn-default" align="center" type="submit" name="log" value="Login">
                             </div>
                         </div>
                         
