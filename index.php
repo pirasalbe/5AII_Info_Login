@@ -1,19 +1,20 @@
 <?php
-
- session_start();
+ $logged=$user=$pass=0;
  
- $_SESSION['pass']=0;
- 
- if(isset($_POST['log'])&&$_SESSION['pass']==0)
+ if(isset($_POST['log'])&&$_COOKIE['pass']==0)
  {
-    $_SESSION['user'] = $_REQUEST['login'];
-    $_SESSION['pass'] = $_REQUEST['pass'];
+    $user = $_REQUEST['login'];
+    $pass = $_REQUEST['pass'];
+    setcookie("user", $user, time() + 86400, "/");  
  }
  
- if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
-    $_SESSION['pass']=1;
+ if(($user=="pirasalbe")&&($pass=="chicco"))
+ {
+    $logged=1;
+    setcookie("pass", $logged, time() + 86400, "/");
+ }
  
- if($_SESSION['pass']==1)
+ if($logged==1)
  {
     header("Location: index2.php");
     die();

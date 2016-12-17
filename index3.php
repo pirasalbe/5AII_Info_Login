@@ -1,13 +1,11 @@
 <?php
 
-    session_start();
-    
-    $logged=$_SESSION['pass'];
+    $logged=$_COOKIE['pass'];
     
     if(isset($_POST['exit'])) 
     {
-        session_destroy();
-        $_SESSION=array();
+        setcookie("user", 0, time() - 86400, "/");  
+        setcookie("pass", 0, time() - 86400, "/");
         $logged=0;
     }
         
