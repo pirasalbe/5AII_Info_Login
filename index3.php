@@ -43,8 +43,8 @@
                          <div class="row">
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index3.php">
-                                    <img src="http://www.w3schools.com/w3images/lights.jpg" alt="Lights" style="width:100%">
+                                  <a href="index2.php">
+                                    <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
                                     <div class="caption">
                                       <p>Lorem ipsum...</p>
                                     </div>
@@ -53,8 +53,8 @@
                               </div>
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index3.php">
-                                    <img src="http://www.w3schools.com/w3images/nature.jpg" alt="Nature" style="width:100%">
+                                  <a href="index2.php">
+                                    <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
                                     <div class="caption">
                                       <p>Lorem ipsum...</p>
                                     </div>
@@ -63,8 +63,8 @@
                               </div>
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index3.php">
-                                    <img src="http://www.w3schools.com/w3images/fjords.jpg" alt="Fjords" style="width:100%">
+                                  <a href="index2.php">
+                                    <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
                                     <div class="caption">
                                       <p>Lorem ipsum...</p>
                                     </div>

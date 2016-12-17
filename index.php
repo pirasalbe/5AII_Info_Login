@@ -47,6 +47,7 @@
                                 <input type="password" class="form-control" name="pass">
                                 <input class="btn btn-default" align="center" type="submit" name="log" value="Login">
                             </div>
+                            <h4><?php if($_SESSION['pass']!=1&&isset($_POST['log'])) echo "<div class='alert alert-danger'>Login errato</div>" ?></h4>
                         </div>
                         
     				</div>		
