@@ -1,17 +1,18 @@
 <?php
 
-    session_start();
+    $_SESSION['user'] = $_REQUEST['login'];
+    $_SESSION['pass'] = $_REQUEST['pass'];
     
-    $logged=$_SESSION['pass'];
+    if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
+        $_SESSION['pass']=1;
     
     if(isset($_POST['exit'])) 
     {
-        session_destroy();
         $_SESSION=array();
         $logged=0;
     }
         
-    if($logged==0)
+    if($_SESSION['pass']!=1)
     {
         header("Location: index.php");
         die();
@@ -30,7 +31,7 @@
 	<body>
             <div class="table-responsive">
 			
-				<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+				<form action="index2.php" method="post">
 				
     				<div class="container">
     					<div class="row">
@@ -43,36 +44,33 @@
                          <div class="row">
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index2.php">
                                     <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-rounded" alt="Cinque Terre" width="304" height="236">
                                     <div class="caption">
-                                      <p>Lorem ipsum...</p>
+                                      <p><input class="btn btn-default" align="center" type="submit" name="si" value="Lorem ipsum..."></p>
                                     </div>
-                                  </a>
                                 </div>
                               </div>
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index2.php">
                                     <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236"> 
                                     <div class="caption">
-                                      <p>Lorem ipsum...</p>
+                                      <p><input class="btn btn-default" align="center" type="submit" name="si" value="Lorem ipsum..."></p>
                                     </div>
-                                  </a>
                                 </div>
                               </div>
                               <div class="col-md-4">
                                 <div class="thumbnail">
-                                  <a href="index2.php">
                                     <img src="http://www.w3schools.com/bootstrap/cinqueterre.jpg" class="img-thumbnail" alt="Cinque Terre" width="304" height="236"> 
                                     <div class="caption">
-                                      <p>Lorem ipsum...</p>
+                                      <p><input class="btn btn-default" align="center" type="submit" name="si" value="Lorem ipsum..."></p>
                                     </div>
-                                  </a>
                                 </div>
                               </div>
                         </div>
-                        
+                        <?php 
+                            echo "<input type='hidden' name='pass' value='chicco'>";
+                            echo "<input type='hidden' name='login' value='pirasalbe'>";
+                        ?>
     				</div>		
 				
 				</form>

@@ -1,26 +1,3 @@
-<?php
-
- session_start();
- 
- $_SESSION['pass']=0;
- 
- if(isset($_POST['log'])&&$_SESSION['pass']==0)
- {
-    $_SESSION['user'] = $_REQUEST['login'];
-    $_SESSION['pass'] = $_REQUEST['pass'];
- }
- 
- if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
-    $_SESSION['pass']=1;
- 
- if($_SESSION['pass']==1)
- {
-    header("Location: index2.php");
-    die();
- }
-
-?>
-
 <html>
 	<head>
             <title>
@@ -32,7 +9,7 @@
 	<body>
             <div class="table-responsive">
 			
-				<form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+				<form action="index2.php" method="post">
 				
     				<div class="container">
     					<div class="row">
@@ -47,7 +24,6 @@
                                 <input type="password" class="form-control" name="pass">
                                 <input class="btn btn-default" align="center" type="submit" name="log" value="Login">
                             </div>
-                            <h4><?php if($_SESSION['pass']!=1&&isset($_POST['log'])) echo "<div class='alert alert-danger'>Login errato</div>" ?></h4>
                         </div>
                         
     				</div>		
