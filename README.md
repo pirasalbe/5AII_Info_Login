@@ -1,5 +1,5 @@
 # 5AII_Login
 
-SESSION
+COOKIES
 
 zecop@dr69.site
