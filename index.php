@@ -1,5 +1,7 @@
 <?php
- $logged=$user=$pass=0;
+ $logged=0;
+ $user="";
+ $pass="";
  
  if(isset($_POST['log'])&&$_COOKIE['pass']==0)
  {
@@ -14,7 +16,7 @@
     setcookie("pass", $logged, time() + 86400, "/");
  }
  
- if($logged==1)
+ if($logged==1||$_COOKIE['pass']==1)
  {
     header("Location: index2.php");
     die();
