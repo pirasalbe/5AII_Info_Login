@@ -1,18 +1,18 @@
 <?php
 
-    $_SESSION['user'] = $_REQUEST['login'];
-    $_SESSION['pass'] = $_REQUEST['pass'];
+    $SESSION['user'] = $_REQUEST['login'];
+    $SESSION['pass'] = $_REQUEST['pass'];
     
-    if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
-        $_SESSION['pass']=1;
+    if(($SESSION['user']=="pirasalbe")&&($SESSION['pass']=="chicco"))
+        $SESSION['pass']=1;
     
     if(isset($_POST['exit'])) 
     {
-        $_SESSION=array();
+        $SESSION=array();
         $logged=0;
     }
         
-    if($_SESSION['pass']!=1)
+    if($SESSION['pass']!=1)
     {
         header("Location: index.php");
         die();
