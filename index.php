@@ -12,6 +12,8 @@
  
  if(($_SESSION['user']=="pirasalbe")&&($_SESSION['pass']=="chicco"))
     $_SESSION['pass']=1;
+ else
+    $_SESSION['pass']=0;
  
  if($_SESSION['pass']==1)
  {
